@@ -1,0 +1,31 @@
+﻿<Window
+    x:Class="DowngradePicture.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DowngradePicture"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Click="OnLoadClicked">Load image to reduce...</Button>
+            <TextBlock Margin="20" Text="Set pixel size to: " />
+            <TextBox Margin="10" Text="20" x:Name="pixelSize" TextChanged="PixelSize_TextChanged" />
+            <Button x:Name="reduceButton" Click="OnReduceClicked" IsEnabled="False">Reduce image</Button>
+            <TextBlock Margin="10" FontSize="20" x:Name="txtDuration" Foreground="Blue"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+                <TextBlock Margin="20" Text="Original image" FontSize="30" />
+                <TextBlock x:Name="txtPath" Text="" />
+                <Image x:Name="originalImage" Width="400" ImageOpened="OnImageOpened" Margin="0,20" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10, 0"  >
+                <TextBlock Margin="20" Text="Reduced image" FontSize="30" />
+                <TextBlock x:Name="txtReducedPath" Text="" />
+                <Image x:Name="reducedImage" Width="400"  Margin="0,20" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
